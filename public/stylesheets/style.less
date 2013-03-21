@@ -1,0 +1,47 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+@color: #aa33aa;
+
+a {
+  color: #00B7FF;
+}
+
+h1 {
+  color: @color;
+}
+
+table {
+  width: 800px;
+  border: 1px solid gray;
+  tr {
+    td, th {
+      border: 1px solid gray;
+    }
+    th {
+      color: @color;
+    }
+  }
+  tr:nth-child(2n) {
+    .row-even;
+  }
+  tr:nth-child(2n+1) {
+    .row-odd;
+  }
+}
+
+.row {
+  font-size: large;
+}
+
+.row-odd {
+  .row;
+  background-color: lightyellow;
+}
+
+.row-even {
+  .row;
+  background-color: lightblue;
+}
