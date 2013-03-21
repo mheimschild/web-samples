@@ -3,15 +3,52 @@ extends layout
 block content
   h1 Tags
   h2 Phactum GmbH
-  table
-    tr
-      th ID
-      th Name
-      th
-    - for (var i = 10; i--; )
-      tr
-        td= i
-        td= 'tag_' + i
-        td
-          a(href="/delete?id=" + i) Delete
-          a(href="/edit?id=" + i) Edit
+  .row
+    .large-8.columns
+      table
+        tr
+          th ID
+          th Name
+          th
+        - for (var i = 10; i--; )
+          tr
+            td= i
+            td= 'tag_' + i
+            td
+              a(href="/delete?id=" + i, class="button") Delete
+              a(href="#", class="button", data-reveal-id="my-modal") Edit
+    .large-4.columns
+      ul.side-nav
+        li.active
+          a(href="#") Link 1
+        li
+          a(href="#") Link 2
+        li.divider
+        li
+          a(href="#") Link 3
+        li
+          a(href="#") Link 4
+      </ul>
+
+  div#my-modal.reveal-modal
+    form
+      fieldset
+        legend Edit Tag
+        .row
+          .large-2.columns
+            label Tag Name
+          .large-10.columns
+            input(type='text')
+        .row
+          .large-2.columns
+            label Category
+          .large-10.columns
+            select
+              option Office1
+              option Office2
+              option Office3
+        .row
+          .large-12
+            a(href="#", style="float: right").button Save      
+            a(href="#", style="float: right").button.secondary Cancel      
+    a.close-reveal-modal&#215;
