@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1 Tags
+  table
+    tr
+      th ID
+      th Name
+      th
+    - for (var i = 10; i--; )
+      tr
+        td= i
+        td= 'tag_' + i
+        td
+          a(href="/delete?id=" + i) Delete
+          a(href="/edit?id=" + i) Edit
